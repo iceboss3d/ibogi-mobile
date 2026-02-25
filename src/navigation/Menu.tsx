@@ -228,7 +228,8 @@ export default () => {
             backgroundColor: 'transparent',
           },
           headerShown: false,
-        }}>
+        }}
+        useLegacyImplementation={false}>
         <Drawer.Screen name="Screens" component={ScreensStack} />
       </Drawer.Navigator>
     </Block>
