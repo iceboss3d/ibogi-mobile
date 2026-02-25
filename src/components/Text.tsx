@@ -66,29 +66,29 @@ const Typography = (props: ITextProps) => {
   const colorIndex = primary
     ? 'primary'
     : secondary
-    ? 'secondary'
-    : tertiary
-    ? 'tertiary'
-    : black
-    ? 'black'
-    : white
-    ? 'white'
-    : gray
-    ? 'gray'
-    : danger
-    ? 'danger'
-    : warning
-    ? 'warning'
-    : success
-    ? 'success'
-    : info
-    ? 'info'
-    : null;
+      ? 'secondary'
+      : tertiary
+        ? 'tertiary'
+        : black
+          ? 'black'
+          : white
+            ? 'white'
+            : gray
+              ? 'gray'
+              : danger
+                ? 'danger'
+                : warning
+                  ? 'warning'
+                  : success
+                    ? 'success'
+                    : info
+                      ? 'info'
+                      : null;
   const textColor = color
     ? color
     : colorIndex
-    ? colors?.[colorIndex]
-    : undefined;
+      ? colors?.[colorIndex]
+      : undefined;
 
   const textStyles = StyleSheet.flatten([
     style,

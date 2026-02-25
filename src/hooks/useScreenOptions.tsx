@@ -1,6 +1,9 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
-import {CardStyleInterpolators, StackNavigationOptions} from '@react-navigation/stack';
+import {
+  CardStyleInterpolators,
+  StackNavigationOptions,
+} from '@react-navigation/stack';
 import {useNavigation, DrawerActions} from '@react-navigation/native';
 import {HeaderTitleProps} from '@react-navigation/elements';
 
@@ -26,9 +29,7 @@ export default () => {
     headerLeftContainerStyle: {paddingLeft: sizes.s},
     headerRightContainerStyle: {paddingRight: sizes.s},
     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-    headerTitle: ({children}: HeaderTitleProps) => (
-      <Text p>{children}</Text>
-    ),
+    headerTitle: ({children}: HeaderTitleProps) => <Text p>{children}</Text>,
     headerLeft: () => (
       <Button onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
         <Image source={icons.menu} radius={0} color={colors.icon} />

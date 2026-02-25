@@ -78,30 +78,30 @@ const Block = (props: IBlockProps) => {
   const colorIndex = primary
     ? 'primary'
     : secondary
-    ? 'secondary'
-    : tertiary
-    ? 'tertiary'
-    : black
-    ? 'black'
-    : white
-    ? 'white'
-    : gray
-    ? 'gray'
-    : danger
-    ? 'danger'
-    : warning
-    ? 'warning'
-    : success
-    ? 'success'
-    : info
-    ? 'info'
-    : null;
+      ? 'secondary'
+      : tertiary
+        ? 'tertiary'
+        : black
+          ? 'black'
+          : white
+            ? 'white'
+            : gray
+              ? 'gray'
+              : danger
+                ? 'danger'
+                : warning
+                  ? 'warning'
+                  : success
+                    ? 'success'
+                    : info
+                      ? 'info'
+                      : null;
 
   const blockColor = color
     ? color
     : colorIndex
-    ? colors?.[colorIndex]
-    : undefined;
+      ? colors?.[colorIndex]
+      : undefined;
 
   const blockStyles = StyleSheet.flatten([
     style,

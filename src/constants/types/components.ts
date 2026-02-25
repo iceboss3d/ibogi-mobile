@@ -16,7 +16,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import {BlurViewProps} from 'expo-blur';
-import {LinearGradientPoint, LinearGradientProps} from 'expo-linear-gradient';
+import {LinearGradientPoint} from 'expo-linear-gradient';
 import {ISpacing, ITheme} from './theme';
 
 /**
@@ -28,10 +28,7 @@ import {ISpacing, ITheme} from './theme';
  *
  */
 export interface IBlockProps
-  extends ISpacing,
-    ViewProps,
-    ScrollViewProps,
-    KeyboardAvoidingViewProps {
+  extends ISpacing, ViewProps, ScrollViewProps, KeyboardAvoidingViewProps {
   /**
    * id for testID & accesibilityLabel
    */

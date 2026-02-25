@@ -8,24 +8,23 @@ import {
 } from 'react-native';
 
 // Spacing types
-export interface ISpacing
-  extends Pick<
-    FlexStyle,
-    | 'margin'
-    | 'marginVertical'
-    | 'marginHorizontal'
-    | 'marginLeft'
-    | 'marginRight'
-    | 'marginTop'
-    | 'marginBottom'
-    | 'padding'
-    | 'paddingVertical'
-    | 'paddingHorizontal'
-    | 'paddingLeft'
-    | 'paddingRight'
-    | 'paddingTop'
-    | 'paddingBottom'
-  > {}
+export interface ISpacing extends Pick<
+  FlexStyle,
+  | 'margin'
+  | 'marginVertical'
+  | 'marginHorizontal'
+  | 'marginLeft'
+  | 'marginRight'
+  | 'marginTop'
+  | 'marginBottom'
+  | 'padding'
+  | 'paddingVertical'
+  | 'paddingHorizontal'
+  | 'paddingLeft'
+  | 'paddingRight'
+  | 'paddingTop'
+  | 'paddingBottom'
+> {}
 
 export type TWeight =
   /** fontWeight: 400 */

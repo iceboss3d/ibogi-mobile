@@ -74,34 +74,34 @@ const Button = ({
   const colorIndex = primary
     ? 'primary'
     : secondary
-    ? 'secondary'
-    : tertiary
-    ? 'tertiary'
-    : black
-    ? 'black'
-    : white
-    ? 'white'
-    : light
-    ? 'light'
-    : dark
-    ? 'dark'
-    : gray
-    ? 'gray'
-    : danger
-    ? 'danger'
-    : warning
-    ? 'warning'
-    : success
-    ? 'success'
-    : info
-    ? 'info'
-    : null;
+      ? 'secondary'
+      : tertiary
+        ? 'tertiary'
+        : black
+          ? 'black'
+          : white
+            ? 'white'
+            : light
+              ? 'light'
+              : dark
+                ? 'dark'
+                : gray
+                  ? 'gray'
+                  : danger
+                    ? 'danger'
+                    : warning
+                      ? 'warning'
+                      : success
+                        ? 'success'
+                        : info
+                          ? 'info'
+                          : null;
 
   const buttonColor = color
     ? color
     : colorIndex
-    ? colors?.[colorIndex]
-    : 'transparent';
+      ? colors?.[colorIndex]
+      : 'transparent';
 
   const buttonStyles = StyleSheet.flatten([
     style,
@@ -237,8 +237,8 @@ const Button = ({
       social === 'facebook'
         ? 'logo-facebook'
         : social === 'twitter'
-        ? 'logo-twitter'
-        : 'logo-dribbble';
+          ? 'logo-twitter'
+          : 'logo-dribbble';
 
     return (
       <TouchableOpacity

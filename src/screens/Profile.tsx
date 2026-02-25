@@ -30,7 +30,7 @@ const Profile = () => {
 
       try {
         Linking.openURL(url);
-      } catch (error) {
+      } catch {
         alert(`Cannot open URL: ${url}`);
       }
     },

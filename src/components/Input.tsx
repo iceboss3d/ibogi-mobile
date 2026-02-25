@@ -57,29 +57,29 @@ const Input = ({
   const colorIndex = primary
     ? 'primary'
     : secondary
-    ? 'secondary'
-    : tertiary
-    ? 'tertiary'
-    : black
-    ? 'black'
-    : white
-    ? 'white'
-    : gray
-    ? 'gray'
-    : danger
-    ? 'danger'
-    : warning
-    ? 'warning'
-    : success
-    ? 'success'
-    : info
-    ? 'info'
-    : null;
+      ? 'secondary'
+      : tertiary
+        ? 'tertiary'
+        : black
+          ? 'black'
+          : white
+            ? 'white'
+            : gray
+              ? 'gray'
+              : danger
+                ? 'danger'
+                : warning
+                  ? 'warning'
+                  : success
+                    ? 'success'
+                    : info
+                      ? 'info'
+                      : null;
   const inputColor = color
     ? color
     : colorIndex
-    ? colors?.[colorIndex]
-    : colors.gray;
+      ? colors?.[colorIndex]
+      : colors.gray;
 
   const inputBoxStyles = StyleSheet.flatten([
     style,

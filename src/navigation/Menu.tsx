@@ -62,9 +62,7 @@ const ScreensStack = () => {
 };
 
 /* custom drawer menu */
-const DrawerContent = (
-  props: DrawerContentComponentProps,
-) => {
+const DrawerContent = (props: DrawerContentComponentProps) => {
   const {navigation} = props;
   const {t} = useTranslation();
   const {isDark, handleIsDark} = useData();
