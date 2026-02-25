@@ -2,10 +2,9 @@ import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {Alert, Animated, Linking, StyleSheet} from 'react-native';
 
 import {
-  useIsDrawerOpen,
+  useDrawerStatus,
   createDrawerNavigator,
   DrawerContentComponentProps,
-  DrawerContentOptions,
   DrawerContentScrollView,
 } from '@react-navigation/drawer';
 
@@ -18,7 +17,8 @@ const Drawer = createDrawerNavigator();
 /* drawer menu screens navigation */
 const ScreensStack = () => {
   const {colors} = useTheme();
-  const isDrawerOpen = useIsDrawerOpen();
+  const drawerStatus = useDrawerStatus();
+  const isDrawerOpen = drawerStatus === 'open';
   const animation = useRef(new Animated.Value(0)).current;
 
   const scale = animation.interpolate({
@@ -63,7 +63,7 @@ const ScreensStack = () => {
 
 /* custom drawer menu */
 const DrawerContent = (
-  props: DrawerContentComponentProps<DrawerContentOptions>,
+  props: DrawerContentComponentProps,
 ) => {
   const {navigation} = props;
   const {t} = useTranslation();
@@ -73,14 +73,14 @@ const DrawerContent = (
   const labelColor = colors.text;
 
   const handleNavigation = useCallback(
-    (to) => {
+    (to: string) => {
       setActive(to);
       navigation.navigate(to);
     },
     [navigation, setActive],
   );
 
-  const handleWebLink = useCallback((url) => Linking.openURL(url), []);
+  const handleWebLink = useCallback((url: string) => Linking.openURL(url), []);
 
   // screen list for Drawer menu
   const screens = [
@@ -218,15 +218,18 @@ export default () => {
   return (
     <Block gradient={gradients.light}>
       <Drawer.Navigator
-        drawerType="slide"
-        overlayColor="transparent"
-        sceneContainerStyle={{backgroundColor: 'transparent'}}
         drawerContent={(props) => <DrawerContent {...props} />}
-        drawerStyle={{
-          flex: 1,
-          width: '60%',
-          borderRightWidth: 0,
-          backgroundColor: 'transparent',
+        screenOptions={{
+          drawerType: 'slide',
+          overlayColor: 'transparent',
+          sceneContainerStyle: {backgroundColor: 'transparent'},
+          drawerStyle: {
+            flex: 1,
+            width: '60%',
+            borderRightWidth: 0,
+            backgroundColor: 'transparent',
+          },
+          headerShown: false,
         }}>
         <Drawer.Screen name="Screens" component={ScreensStack} />
       </Drawer.Navigator>

@@ -58,7 +58,7 @@ export const COLORS: ThemeColors = {
   switchOff: '#E9ECEF',
 
   /** UI color for checkbox icon checked/active color */
-  checkbox: ['#3A416F', '#141727'],
+  checkbox: ['#3A416F', '#141727'] as const,
   checkboxIcon: '#FFFFFF',
 
   /** social colors */
@@ -77,25 +77,25 @@ export const COLORS: ThemeColors = {
 };
 
 export const GRADIENTS: ThemeGradients = {
-  primary: ['#FF0080', '#7928CA'],
-  secondary: ['#A8B8D8', '#627594'],
-  info: ['#21D4FD', '#2152FF'],
-  success: ['#98EC2D', '#17AD37'],
-  warning: ['#FBCF33', '#F53939'],
-  danger: ['#FF667C', '#EA0606'],
+  primary: ['#FF0080', '#7928CA'] as const,
+  secondary: ['#A8B8D8', '#627594'] as const,
+  info: ['#21D4FD', '#2152FF'] as const,
+  success: ['#98EC2D', '#17AD37'] as const,
+  warning: ['#FBCF33', '#F53939'] as const,
+  danger: ['#FF667C', '#EA0606'] as const,
 
-  light: ['#EBEFF4', '#CED4DA'],
-  dark: ['#3A416F', '#141727'],
+  light: ['#EBEFF4', '#CED4DA'] as const,
+  dark: ['#3A416F', '#141727'] as const,
 
-  white: [String(COLORS.white), '#EBEFF4'],
-  black: [String(COLORS.black), '#141727'],
+  white: [String(COLORS.white), '#EBEFF4'] as const,
+  black: [String(COLORS.black), '#141727'] as const,
 
-  divider: ['rgba(255,255,255,0.3)', 'rgba(102, 116, 142, 0.6)'],
+  divider: ['rgba(255,255,255,0.3)', 'rgba(102, 116, 142, 0.6)'] as const,
   menu: [
     'rgba(255, 255, 255, 0.2)',
     'rgba(112, 125, 149, 0.5)',
     'rgba(255, 255, 255, 0.2)',
-  ],
+  ] as const,
 };
 
 export const SIZES: ThemeSizes = {

@@ -1,5 +1,5 @@
 import i18n from 'i18n-js';
-import * as Localization from 'expo-localization';
+import {getLocales} from 'expo-localization';
 import Storage from '@react-native-async-storage/async-storage';
 import React, {useCallback, useContext, useEffect, useState} from 'react';
 
@@ -35,7 +35,7 @@ export const TranslationProvider = ({
     const localeJSON = await Storage.getItem('locale');
 
     // set Locale / compare if has updated
-    setLocale(localeJSON !== null ? localeJSON : Localization.locale);
+    setLocale(localeJSON !== null ? localeJSON : (getLocales()[0]?.languageTag ?? 'en'));
   }, [setLocale]);
 
   useEffect(() => {

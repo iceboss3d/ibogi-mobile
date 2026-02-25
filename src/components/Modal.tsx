@@ -36,7 +36,7 @@ const Modal = ({
             top={0}
             right={0}
             position="absolute"
-            onPress={() => onRequestClose?.()}>
+            onPress={() => onRequestClose?.(undefined as any)}>
             <Image source={assets.close} color={colors.white} />
           </Button>
           <Block

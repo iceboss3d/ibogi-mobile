@@ -1,12 +1,8 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
-import {
-  StackHeaderTitleProps,
-  CardStyleInterpolators,
-} from '@react-navigation/stack';
-import {useNavigation} from '@react-navigation/core';
-import {DrawerActions} from '@react-navigation/native';
-import {StackHeaderOptions} from '@react-navigation/stack/lib/typescript/src/types';
+import {CardStyleInterpolators, StackNavigationOptions} from '@react-navigation/stack';
+import {useNavigation, DrawerActions} from '@react-navigation/native';
+import {HeaderTitleProps} from '@react-navigation/elements';
 
 import {useData} from './useData';
 import {useTranslation} from './useTranslation';
@@ -20,7 +16,7 @@ import Block from '../components/Block';
 export default () => {
   const {t} = useTranslation();
   const {user} = useData();
-  const navigation = useNavigation();
+  const navigation = useNavigation<any>();
   const {icons, colors, gradients, sizes} = useTheme();
 
   const menu = {
@@ -30,7 +26,7 @@ export default () => {
     headerLeftContainerStyle: {paddingLeft: sizes.s},
     headerRightContainerStyle: {paddingRight: sizes.s},
     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-    headerTitle: ({children}: StackHeaderTitleProps) => (
+    headerTitle: ({children}: HeaderTitleProps) => (
       <Text p>{children}</Text>
     ),
     headerLeft: () => (
@@ -83,7 +79,7 @@ export default () => {
         </TouchableOpacity>
       </Block>
     ),
-  } as StackHeaderOptions;
+  } as StackNavigationOptions;
 
   const options = {
     stack: menu,

@@ -97,7 +97,7 @@ export interface ThemeColors {
   input: ColorValue;
   switchOn: ColorValue;
   switchOff: ColorValue;
-  checkbox: string[];
+  checkbox: readonly [string, string, ...string[]];
   checkboxIcon: ColorValue;
   facebook: ColorValue;
   twitter: ColorValue;
@@ -108,20 +108,20 @@ export interface ThemeColors {
 }
 
 export interface ThemeGradients {
-  primary?: string[];
-  secondary?: string[];
-  tertiary?: string[];
-  black?: string[];
-  white?: string[];
-  light?: string[];
-  dark?: string[];
-  gray?: string[];
-  danger?: string[];
-  warning?: string[];
-  success?: string[];
-  info?: string[];
-  divider?: string[];
-  menu?: string[];
+  primary?: readonly [string, string, ...string[]];
+  secondary?: readonly [string, string, ...string[]];
+  tertiary?: readonly [string, string, ...string[]];
+  black?: readonly [string, string, ...string[]];
+  white?: readonly [string, string, ...string[]];
+  light?: readonly [string, string, ...string[]];
+  dark?: readonly [string, string, ...string[]];
+  gray?: readonly [string, string, ...string[]];
+  danger?: readonly [string, string, ...string[]];
+  warning?: readonly [string, string, ...string[]];
+  success?: readonly [string, string, ...string[]];
+  info?: readonly [string, string, ...string[]];
+  divider?: readonly [string, string, ...string[]];
+  menu?: readonly [string, string, ...string[]];
 }
 
 export interface ThemeSizes {

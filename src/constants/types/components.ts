@@ -15,8 +15,8 @@ import {
   ViewProps,
   ViewStyle,
 } from 'react-native';
-import {BlurProps} from 'expo-blur';
-import {LinearGradientPoint} from 'expo-linear-gradient';
+import {BlurViewProps} from 'expo-blur';
+import {LinearGradientPoint, LinearGradientProps} from 'expo-linear-gradient';
 import {ISpacing, ITheme} from './theme';
 
 /**
@@ -105,7 +105,7 @@ export interface IBlockProps
    * Renders LinearGradient component, colors
    * @see https://docs.expo.io/versions/latest/sdk/linear-gradient/#props
    */
-  gradient?: string[];
+  gradient?: readonly [string, string, ...string[]];
   /**
    * Renders a backgroundColor directly from the colors.primary value
    * @see https://reactnative.dev/docs/view-style-props#backgroundcolor
@@ -196,12 +196,12 @@ export interface IBlockProps
    * BlueView intensity, default: 50, values accepted: 1 to 100
    * @see https://docs.expo.io/versions/latest/sdk/blur-view/#intensity
    */
-  intensity?: BlurProps['intensity'];
+  intensity?: BlurViewProps['intensity'];
   /**
    * BlueView tint color, default: 'default', values accepted: 'light', 'dark', 'default'
    * @see https://docs.expo.io/versions/latest/sdk/blur-view/#blurtint
    */
-  tint?: BlurProps['tint'];
+  tint?: BlurViewProps['tint'];
   /**
    * Renders the View position
    * @see https://reactnative.dev/docs/layout-props#position
@@ -283,7 +283,7 @@ export interface IButtonProps extends TouchableOpacityProps, ISpacing {
    * Renders LinearGradient component, colors
    * @see https://docs.expo.io/versions/latest/sdk/linear-gradient/#props
    */
-  gradient?: string[];
+  gradient?: readonly [string, string, ...string[]];
   /**
    * Renders a backgroundColor directly from the colors.primary value
    * @see https://reactnative.dev/docs/view-style-props#backgroundcolor
@@ -725,7 +725,7 @@ export interface ITextProps extends TextProps, ISpacing {
    * Renders LinearGradient component, colors
    * @see https://docs.expo.io/versions/latest/sdk/linear-gradient/#props
    */
-  gradient?: string[];
+  gradient?: readonly [string, string, ...string[]];
   /**
    * Renders a Text color directly from the colors.primary value
    * @see https://reactnative.dev/docs/text-style-props#color

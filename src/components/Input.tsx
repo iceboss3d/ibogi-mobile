@@ -46,7 +46,7 @@ const Input = ({
   const [isFocused, setFocused] = useState(false);
 
   const handleFocus = useCallback(
-    (event, focus) => {
+    (event: any, focus: boolean) => {
       setFocused(focus);
       focus && onFocus?.(event);
       !focus && onBlur?.(event);
